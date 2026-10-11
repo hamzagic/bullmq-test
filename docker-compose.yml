@@ -7,8 +7,7 @@ services:
       - 6379:6379
     volumes:
       - redis_data:/data
-    command: redis-server appendonly yes --requirepass "password"
+    command: ["redis-server", "--appendonly", "yes", "--requirepass", "password"]
 
 volumes:
   redis_data:
-  driver: local
